@@ -1,0 +1,52 @@
+﻿@model Web_FIA35_Kontaktformular_Model_vs_Viewbag.Person
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div style="width:80%;margin:auto;background-color:yellowgreen;padding:10px;border-radius:10px" />
+    <h1><strong>Model vs. ViewBag</strong></h1>
+    <form method="post" action="/home/index">
+        <fieldset>
+            <legende>Mit ViewBag</legende>
+            <br />
+            <input type="text" id="inpNameVB" name="inpNameVB" required autofocus placeholder="Name" />
+            <label for="inpNameVB">Name</label>
+            <input type="color" id="inpLieblingsfarbeVB" name="inpLieblingsfarbeVB" required />
+            <label for="inpLieblingsfarbeVB">Lieblingsfarbe</label>
+        </fieldset>
+        <fieldset>
+            <legende>Mit Model</legende>
+            <br />
+            <input type="text" id="inpNameModel" name="inpNameModel" required autofocus placeholder="Name" />
+            <label for="inpNameModel">Name</label>
+            <input type="color" id="inpLieblingsfarbeModel" name="inpLieblingsfarbeModel" required />
+            <label for="inpLieblingsfarbeModel">Lieblingsfarbe</label>
+        </fieldset>
+        <br />
+        <button>Absenden</button>
+        <button>Zurücksetzen</button>
+    </form>
+    <ol></ol>
+    <h2>Per Viewbag:</h2>
+    <label for="lblNameVB">Name: @ViewBag.Name</label>
+    <br />    
+    <p style="background-color:@ViewBag.Lieblingsfarbe;">Lieblingsfarbe: @ViewBag.Lieblingsfarbe</p>
+
+    <br />
+    <h2>Per Model:</h2>
+    <label for="lblNameModel">Name: @Model.name</label>
+    <br />    
+    <p style="background-color:@Model.lieblingsFarbe;">Lieblingsfarbe: @Model.lieblingsFarbe</p>
+    
+    <div />
+    <br />
+</body>
+</html>
